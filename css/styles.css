@@ -149,6 +149,25 @@ p{
 /* Call to Action */
 
 /* Footer */
+#footer{
+    
+    min-height: 100px;
+    align-items: center;
+}
+
+#footer .btn{
+    position: relative;
+    top: 20px;
+}
+
+#footer .btn:hover{
+    color: green;
+}
+
+#footer p{
+    position: relative;
+    top: 20px;
+}
 
 @media (max-width: 970px){
     #title{
