@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 03-Jul-2022 às 20:19
+-- Tempo de geração: 03-Jul-2022 às 23:37
 -- Versão do servidor: 5.7.36
 -- versão do PHP: 7.4.26
 
@@ -42,16 +42,17 @@ CREATE TABLE IF NOT EXISTS `caronas` (
   `parada5` varchar(280) DEFAULT NULL,
   `veiculo` varchar(280) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `caronas`
 --
 
 INSERT INTO `caronas` (`id`, `horario`, `valor`, `vagas`, `saida`, `destino`, `parada1`, `parada2`, `parada3`, `parada4`, `parada5`, `veiculo`) VALUES
-(1, '111', 20, 4, 'Centro', 'Penha', '1', '2', '3', '4', '5', 'HB20'),
-(2, '111', 20, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20'),
-(3, '20:00', 20, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20');
+(6, '21:00', 30, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20'),
+(3, '20:00', 20, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20'),
+(4, '20:00', 20, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20'),
+(5, '10:00', 20, 4, 'Centro', 'Penha', '', '', '', '', '', 'HB20');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
