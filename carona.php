@@ -20,9 +20,9 @@ function insereCarona($horario, $valor, $vagas, $saida, $destino, $parada1, $par
 	$conexao->close(); // Fecha a conexão com o BD
 	if (mysqli_num_rows($resultado) > 0) {
 		 while ($row = mysqli_fetch_array($resultado)) {
-			  $veiculo[] = $row;
+			  $carona[] = $row;
 		 }
-		 return $veiculo;
+		 return $carona;
 	} else {
 		 return null;
 	} }

@@ -45,13 +45,14 @@
         <ul class="navbar-nav ms-auto">
 
           <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
+              <a class="nav-link" href="login.php">Login</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="register.html">Cadastro</a>
+              <a class="nav-link" href="register.php">Cadastro</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="historico.html">Ver Perfil</a>
+          </li>
           </li>
             
         </ul>
@@ -67,7 +68,7 @@
               <div class="row g-0">
                 <div class="col-md-6 col-lg-5 d-none d-md-block">
                   <img
-                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    src="images/img1.webp"
                     alt="login form"
                     class="img-fluid"
                     style="border-radius: 1rem 0 0 1rem"
@@ -103,7 +104,7 @@
 
                       <p class="mb-5 pb-lg-2" style="color: #393f81">
                         Não Tem Uma Conta?
-                        <a href="register.html" style="color: #393f81">Registre Aqui</a>
+                        <a href="register.php" style="color: #393f81">Registre Aqui</a>
                       </p>
                     </form>
                   </div>

@@ -15,7 +15,7 @@
 
     insereCarona($horario, $valor, $vagas, $saida, $destino, $parada1, $parada2, $parada3, $parada4, $parada5, $veiculo);
 ?>
-    <!-- <meta http-equiv="refresh" content="0; URL='index.html?mensagem=ui'"/> -->
+    <meta http-equiv="refresh" content="0; URL='index.html?mensagem=ui'"/>
 <?php
     
 

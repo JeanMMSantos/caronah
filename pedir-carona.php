@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -45,19 +42,17 @@
       
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         
-        <ul class="navbar-nav ms-auto">
-
-        <li class="nav-item">
-              <a class="nav-link" href="login.php">Login</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="register.php">Cadastro</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="historico.html">Ver Perfil</a>
-          </li>
-            
-        </ul>
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="#footer">Contato</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="login.html">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="register.html">Cadastro</a>
+              </li>
+          </ul>
 
       </div>    
     </nav>
@@ -72,47 +67,47 @@
                   <div class="col-md-12 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form action="autentica.php" method="POST">
+                      <form>
       
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <span class="h1 fw-bold mb-0">Caronah</span>
                         </div>
       
-                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Cadastre-se</h5>
-      
-                        <div class="form-outline mb-4">
-                          <input type="name" name="nome" id="nome" class="form-control form-control-lg" />
-                          <label class="form-label" for="nome">Nome</label>
-                        </div>
+                        <div class="container">
+                          
+                          <table class="table">
+                              <?php include_once("carona.php");
+                              $vetcaronas = retornaCarona();
+                              if ($vetcaronas != null) {
+                                  foreach ($vetcaronas as $carona) {
+                                    $horario = $_POST["horario"];
+                                    $valor = $_POST["valor"];
+                                    $vagas = $_POST["vagas"];
+                                    $saida = $_POST["saida"];
+                                    $destino = $_POST["destino"];
+                                    $parada1 = $_POST["parada1"];
+                                    $parada2 = $_POST["parada2"];
+                                    $parada3 = $_POST["parada3"];
+                                    $parada4 = $_POST["parada4"];
+                                    $parada5 = $_POST["parada5"];
+                                    $veiculo = $_POST["veiculo"];
+                                    echo ('<tr> <td>' . $horario . '</td> <td>' . $valor . '</td>
+                          <td>' . $email . '</td> <td><a href="formulario.php?id=' . $vagas .
+                                          '" class="btn btn-primary">Alterar</a><a href="excluir.php?id=' . $vagas . '" class="btn btn-danger" onclick="return confirm(\'Deseja excluir?\');">Excluir</a></td> </tr>');
+                                  } // fecha foreach
+                              } // fecha if
+                              else {
+                                  echo ("<tr><td>Nenhum registro encontrado!</td></tr>");
+                              }
+                              ?>
+                          </table>
+                      </div>
 
-                        <div class="form-outline mb-4">
-                            <input type="text" name="cpf" id="cpf" class="form-control form-control-lg" />
-                            <label class="form-label" for="cpf">CPF</label>
-                          </div>
-      
-                        <div class="form-outline mb-4">
-                          <input type="text" name="endereco" id="endereco" class="form-control form-control-lg" />
-                          <label class="form-label" for="endereco">Endereço</label>
-                        </div>
-
-                        <div class="form-outline mb-4">
-                            <input type="email" name="email" id="email" class="form-control form-control-lg" />
-                            <label class="form-label" for="email">Email</label>
-                          </div>
-
-                          <div class="form-outline mb-4">
-                            <input type="password" name="senha" id="senha" class="form-control form-control-lg" />
-                            <label class="form-label" for="senha">Senha</label>
-                          </div>
-
-                          <!-- <div class="form-outline mb-4">
-                            <input type="password" id="confsenha" class="form-control form-control-lg" />
-                            <label class="form-label" for="confsenha">Confirmar Senha</label>
-                          </div> -->
-      
+                        
                         <div class="pt-1 mb-4 text-center">
-                          <button class="btn btn-success btn-lg btn-block" type="submit">Cadastrar</button>
+                            <button class="btn btn-success btn-lg btn-block " type="button">Buscar Caronas</button>
                         </div>
+      
       
                       </form>
       
