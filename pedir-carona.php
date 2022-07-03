@@ -43,15 +43,15 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         
           <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                  <a class="nav-link" href="#footer">Contato</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="login.html">Login</a>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="register.html">Cadastro</a>
-              </li>
+          <li class="nav-item">
+              <a class="nav-link" href="login.php">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.php">Cadastro</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="historico.html">Ver Perfil</a>
+            </li>
           </ul>
 
       </div>    
@@ -78,22 +78,28 @@
                           <table class="table">
                               <?php include_once("carona.php");
                               $vetcaronas = retornaCarona();
+                              
                               if ($vetcaronas != null) {
+                                echo ('<tr> <td>' . "Horário" . '</td> <td>' . "Valor" . '</td>
+                          <td>' . "Saída" . '</td> <td>' . "Parada 1" . '</td> <td>' . "Parada 2" . '</td> <td>' . "Parada 3" . '</td> <td>' . "Parada 4" . '</td> <td>' . "Parada 5" .
+                          '</td> <td>' . "Destino");
+                                
                                   foreach ($vetcaronas as $carona) {
-                                    $horario = $_POST["horario"];
-                                    $valor = $_POST["valor"];
-                                    $vagas = $_POST["vagas"];
-                                    $saida = $_POST["saida"];
-                                    $destino = $_POST["destino"];
-                                    $parada1 = $_POST["parada1"];
-                                    $parada2 = $_POST["parada2"];
-                                    $parada3 = $_POST["parada3"];
-                                    $parada4 = $_POST["parada4"];
-                                    $parada5 = $_POST["parada5"];
-                                    $veiculo = $_POST["veiculo"];
-                                    echo ('<tr> <td>' . $horario . '</td> <td>' . $valor . '</td>
-                          <td>' . $email . '</td> <td><a href="formulario.php?id=' . $vagas .
-                                          '" class="btn btn-primary">Alterar</a><a href="excluir.php?id=' . $vagas . '" class="btn btn-danger" onclick="return confirm(\'Deseja excluir?\');">Excluir</a></td> </tr>');
+                                    $horario = $carona["horario"];
+                                    $valor = $carona["valor"];
+                                    $vagas = $carona["vagas"];
+                                    $saida = $carona["saida"];
+                                    $destino = $carona["destino"];
+                                    $parada1 = $carona["parada1"];
+                                    $parada2 = $carona["parada2"];
+                                    $parada3 = $carona["parada3"];
+                                    $parada4 = $carona["parada4"];
+                                    $parada5 = $carona["parada5"];
+                                    $veiculo = $carona["veiculo"];
+                                    echo ('<tr> <td>' . $horario . '</td> <td>' . "R$" . $valor . '</td>
+                          <td>' . $saida . '</td> <td>' . $parada1 . '</td> <td>' . $parada2 . '</td> <td>' . $parada3 . '</td> <td>' . $parada4 . '</td> <td>' . $parada5 .
+                          '</td> <td>' . $destino . '</td> <td><a href="formulario.php?id=' . $vagas .
+                                           '" class="btn btn-success" onclick="return confirm(\'Deseja Confirmar?\');">Pegar Carona?</a></td> </tr>');
                                   } // fecha foreach
                               } // fecha if
                               else {
@@ -102,11 +108,6 @@
                               ?>
                           </table>
                       </div>
-
-                        
-                        <div class="pt-1 mb-4 text-center">
-                            <button class="btn btn-success btn-lg btn-block " type="button">Buscar Caronas</button>
-                        </div>
       
       
                       </form>
