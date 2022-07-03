@@ -55,7 +55,7 @@
               <a class="nav-link" href="register.html">Cadastro</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="historico.html">Ver Perfil</a>
+              <a class="nav-link" href="perfil.php">Ver Perfil</a>
           </li>
             
         </ul>

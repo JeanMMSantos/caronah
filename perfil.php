@@ -67,8 +67,6 @@
                   <div class="col-md-12 d-flex align-items-center">
                     <div class="card-body p-4 p-lg-5 text-black">
       
-                      <form>
-      
                         <div class="d-flex align-items-center mb-3 pb-1">
                           <span class="h1 fw-bold mb-0">Caronah</span>
                         </div>
@@ -79,6 +77,7 @@
                               <?php include_once("carona.php");
                               $vetcaronas = retornaCarona();
                               
+                              ?><p>Caronas Pedidas</p><?php
                               if ($vetcaronas != null) {
                                 echo ('<tr> <td>' . "Horário" . '</td> <td>' . "Valor" . '</td>
                           <td>' . "Saída" . '</td> <td>' . "Parada 1" . '</td> <td>' . "Parada 2" . '</td> <td>' . "Parada 3" . '</td> <td>' . "Parada 4" . '</td> <td>' . "Parada 5" .
@@ -98,8 +97,40 @@
                                     $veiculo = $carona["veiculo"];
                                     echo ('<tr> <td>' . $horario . '</td> <td>' . "R$" . $valor . '</td>
                           <td>' . $saida . '</td> <td>' . $parada1 . '</td> <td>' . $parada2 . '</td> <td>' . $parada3 . '</td> <td>' . $parada4 . '</td> <td>' . $parada5 .
-                          '</td> <td>' . $destino . '</td> <td><a href="formulario.php?id=' . $vagas .
-                                           '" class="btn btn-success" onclick="return confirm(\'Deseja Confirmar?\');">Pegar Carona?</a></td> </tr>');
+                          '</td> <td>' . $destino . '</td> </tr>');
+                                  } // fecha foreach
+                              } // fecha if
+                              else {
+                                  echo ("<tr><td>Nenhum registro encontrado!</td></tr>");
+                              }
+                              ?>
+                          </table>
+
+                          <table class="table">
+                              <?php include_once("carona.php");
+                              $vetcaronas = retornaCarona();
+                              
+                              ?><br><br><p>Caronas Dadas</p><?php
+                              if ($vetcaronas != null) {
+                                echo ('<tr> <td>' . "Horário" . '</td> <td>' . "Valor" . '</td>
+                          <td>' . "Saída" . '</td> <td>' . "Parada 1" . '</td> <td>' . "Parada 2" . '</td> <td>' . "Parada 3" . '</td> <td>' . "Parada 4" . '</td> <td>' . "Parada 5" .
+                          '</td> <td>' . "Destino");
+                                
+                                  foreach ($vetcaronas as $carona) {
+                                    $horario = $carona["horario"];
+                                    $valor = $carona["valor"];
+                                    $vagas = $carona["vagas"];
+                                    $saida = $carona["saida"];
+                                    $destino = $carona["destino"];
+                                    $parada1 = $carona["parada1"];
+                                    $parada2 = $carona["parada2"];
+                                    $parada3 = $carona["parada3"];
+                                    $parada4 = $carona["parada4"];
+                                    $parada5 = $carona["parada5"];
+                                    $veiculo = $carona["veiculo"];
+                                    echo ('<tr> <td>' . $horario . '</td> <td>' . "R$" . $valor . '</td>
+                          <td>' . $saida . '</td> <td>' . $parada1 . '</td> <td>' . $parada2 . '</td> <td>' . $parada3 . '</td> <td>' . $parada4 . '</td> <td>' . $parada5 .
+                          '</td> <td>' . $destino . '</td> </tr>');
                                   } // fecha foreach
                               } // fecha if
                               else {
@@ -108,9 +139,6 @@
                               ?>
                           </table>
                       </div>
-      
-      
-                      </form>
       
                     </div>
                   </div>
